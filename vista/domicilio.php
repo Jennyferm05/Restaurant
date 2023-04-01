@@ -99,7 +99,7 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           ?>
           </select><br>
           <label>Id_Repartidor *</label>
-          <select name="Id_Repartidor"  class="form-control" style="width: 65%">
+          <select name="repartidor"  class="form-control" style="width: 65%">
           <option>---- Seleccione---</option>
           <?php
           foreach($repartidor as $filtro){
@@ -143,7 +143,11 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           }
           ?>
           </select><br>
+          <input type="submit" name="btn_guardar" class="btn btn-success" value="Enviar">
+        </div>
           <br>
+          <br>
+
           <!---controlador guardar - insertar datos-->
           <?php
           include("../modelo/conexioncrud.php");
@@ -158,7 +162,7 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
             $Id_Platos_Populares = $_POST['platos'];
             $Id_Postres = $_POST['postres'];
             $Id_Bebidas = $_POST['bebidas'];
-            $Id_Repartidor = $_POST['Id_Repartidor'];
+            $Id_Repartidor = $_POST['repartidor'];
             if($Nombres=="" || $Apellidos=="" || $Telefono=="" || $Correo=="" || $Direccion=="" || $Id_Metodo_Pagos=="" || $Id_Platos_Populares=="" || $Id_Postres=="" || $Id_Bebidas=="" || $Id_Repartidor=="")
             {  
               echo"<script> alert('Todos los campos son obligatorios ')

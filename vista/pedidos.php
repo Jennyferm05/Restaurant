@@ -98,7 +98,7 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
 				<td><?php echo $filtro['Id_Platos_Populares']?></td>
 				<td><?php echo $filtro['Id_Postres']?></td>
         <td><?php echo $filtro['Id_Bebidas']?></td>
-        <td><?php echo $filtro['Id_Repartidor']?><button type="button" class="btn btn-success repartidorbtn" data-bs-toggle="modal" data-bs-target="#repartidor"><i class="fa-solid fa-truck-fast"></i></button></td>
+        <td><?php echo $filtro['Id_Repartidor']?></td>
         <td>Entregado <input type="checkbox"></td>
         <td><button type="button" class="btn btn-success editbtn" data-bs-toggle="modal" data-bs-target="#editar"><i class="fa-solid fa-file-pen"></button></td>
         <td><button type="button" class="btn btn-danger deletebtn" data-bs-toggle="modal" data-bs-target="#eliminar"><i class="fa-solid fa-trash-can"></i></i></button></td>
@@ -113,39 +113,6 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
 	</div>
     </div>
     </div>
-    <!--- Modal de editar --->
-		<div class="modal fade" id="repartidor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualización de Pedidos</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form action="../controlador/editar.php" method="post">
-				<input type="hidden" name="id" id="Id_Repartidor">
-          <label>Repartidor *</label>
-          <select name="repartidor_"  class="form-control" style="width: 65%">
-          <option>---- Seleccione---</option>
-          <?php
-          foreach($respartidores as $filtro){
-            ?> 
-            <option><?php echo $filtro['Id_Repartidor']?>. <?php echo $filtro['Nombre']?>   <?php echo $filtro['Telefono']?></option>
-          <?php
-          }
-          ?>
-          </select>
-          <br>
-					<div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-success">Seleccionar</button>
-      </div>
-					</form>
-      </div>
-    
-    </div>
-  </div>
-
 
 
     <!--- Modal de editar --->
@@ -204,6 +171,11 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
 					<label for="">Id_Bebidas</label>
 					<input type="text" name="bebidas" id="bebidas" class="form-control">
 					</div>
+
+          <div class="form-group">
+					<label for="">Id_Repartidor</label>
+					<input type="text" name="repartidor" id="repartidor" class="form-control">
+					</div>
           
           <br>
 					<div class="modal-footer">
@@ -238,19 +210,6 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 </div>
-<script>
-$('.repartidorbtn').on('click',function(){
-	
-	$tr=$(this).closest('tr');
-	var datos=$tr.children("td").map(function(){
-	 return $(this).text();
-	});
-	
-	$('#Id_Repartidor').val(datos[0]);
-	$('#repartidor_').val(datos[1]);
-});
-
-</script>
 
 <script>
 $('.editbtn').on('click',function(){
@@ -270,6 +229,7 @@ $('.editbtn').on('click',function(){
   $('#platos').val(datos[7]);
   $('#postres').val(datos[8]);
   $('#bebidas').val(datos[9]);
+  $('#repartidor').val(datos[10]);
 });
 
 </script>

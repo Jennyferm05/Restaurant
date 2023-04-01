@@ -10,11 +10,12 @@ $Id_Metodo_Pagos = $_POST['pagos'];
 $Id_Platos_Populares = $_POST['platos'];
 $Id_Postres = $_POST['postres'];
 $Id_Bebidas = $_POST['bebidas'];
+$Id_Repartidor = $_POST['repartidor'];
 
 
 
-$sentencia = $bd->prepare("UPDATE domicilios SET Nombres= ?,Apellidos= ?,Telefono= ?,Correo= ?,Direccion= ?,Id_Metodo_Pagos= ?,Id_Platos_Populares= ?,Id_Postres= ?,Id_Bebidas= ? WHERE Id= ?;");
-$resultado = $sentencia->execute([$Nombres,$Apellidos,$Telefono,$Correo,$Direccion,$Id_Metodo_Pagos,$Id_Platos_Populares,$Id_Postres,$Id_Bebidas,$Id]);
+$sentencia = $bd->prepare("UPDATE domicilios SET Nombres= ?,Apellidos= ?,Telefono= ?,Correo= ?,Direccion= ?,Id_Metodo_Pagos= ?,Id_Platos_Populares= ?,Id_Postres= ?,Id_Bebidas= ?,Id_Repartidor= ? WHERE Id= ?;");
+$resultado = $sentencia->execute([$Nombres,$Apellidos,$Telefono,$Correo,$Direccion,$Id_Metodo_Pagos,$Id_Platos_Populares,$Id_Postres,$Id_Bebidas,$Id_Repartidor,$Id]);
     
 if($resultado){
 echo "<script> alert('Edicion Exitoso')
