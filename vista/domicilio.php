@@ -85,6 +85,8 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           <input type="text" name="correo"  class="form-control" style="width: 65%" placeholder="Correo"><br>
           <label>Direccion *</label>
           <input type="text" name="direccion"  class="form-control" style="width: 65%" placeholder="Direccion"><br>
+        </div>
+          <div class="col-6">
           <label>Id_Metodo_Pago *</label>
           <select name="pagos"  class="form-control" style="width: 65%">
           <option>---- Seleccione---</option>
@@ -107,20 +109,6 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           }
           ?>
           </select><br>
-        </div>
-          <div class="col-6">
-          <script>
-            function cal(){
-              try {
-                var a = parseInt(document.f.precioplatos.value),
-                s = parseInt(document.f.preciopostres.value);
-                b = parseInt(document.f.preciobebidas.value);
-                document.f.total.value = a+s+b; 
-              }  catch (e){
-                
-               }
-              }
-              </script>
           <label>Id_Platos Populares *</label>
           <select name="platos"  class="form-control" style="width: 65%">
           <option>---- Seleccione---</option>
@@ -132,8 +120,6 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           }
           ?>
           </select><br>
-          <label>Precio_Platos *</label>
-          <input type="number" id="precioplatos"  class="form-control" style="width: 65%" value="0" onchange="cal()" onkeyup="cal()"><br>
           <label>Id_Postres *</label>
           <select name="postres"  class="form-control" style="width: 65%">
           <option>---- Seleccione---</option>
@@ -145,8 +131,6 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           }
           ?>
           </select><br>
-          <label>Precio_Postres *</label>
-          <input type="number" id="preciopostres"  class="form-control" style="width: 65%" value="0" onchange="cal()" onkeyup="cal()"><br>
           <label>Id_Bebidas *</label>
           <select name="bebidas"  class="form-control" style="width: 65%">
           <option>---- Seleccione---</option>
@@ -159,12 +143,6 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
           }
           ?>
           </select><br>
-          <label>Precio_Bebidas *</label>
-          <input type="number" id="preciobebidas" class="form-control" style="width: 65%" value="0" onchange="cal()" onkeyup="cal()"><br>
-          <label>Total *</label>
-          <input type="number" id="total" class="form-control" style="width: 65%" readonly="readonly" onchange="cal()" onkeyup="cal()" disabled><br>
-          <input type="submit" name="btn_guardar" class="btn btn-success" value="Enviar">
-          <br>
           <br>
           <!---controlador guardar - insertar datos-->
           <?php
@@ -223,15 +201,15 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="footer_tag">
                 <h2>Contacto</h2>
-                <p>+57 312 3456 789</p>
-                <p>+57 325 5568456</p>
-                <p>juanita123@gmail.com</p>
-                <p>mexicano123@gmail.com</p>
+                <p>+57 313 3573388</p>
+                <p>+57 320 4074867</p>
+                <p>Mayerlicastaneda2004@gmail.com</p>
+                <p>guevarax72@gmail.com</p>
             </div>
 
             <div class="footer_tag">
                 <h2>Nuestro servicio</h2>
-                <p>entrega rapida</p>
+                <p>Entrega rapida</p>
                 <p>Pagos Faciles</p>
                 <p>24 x 7 Servicio</p>
             </div>

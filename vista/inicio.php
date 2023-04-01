@@ -117,6 +117,7 @@ else
                 <p>Inicio</p>
                 <p>Menu</p>
                 <p>Domicilio</p>
+                <p>Contactos</p>
             </div>
 
             <div class="footer_tag">

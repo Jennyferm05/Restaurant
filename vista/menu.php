@@ -224,19 +224,20 @@
                 <p>Inicio</p>
                 <p>Menu</p>
                 <p>Domicilio</p>
+                <p>Contactos</p>
             </div>
 
             <div class="footer_tag">
                 <h2>Contacto</h2>
-                <p>+57 312 3456 789</p>
-                <p>+57 325 5568456</p>
-                <p>juanita123@gmail.com</p>
-                <p>mexicano123@gmail.com</p>
+                <p>+57 313 3573388</p>
+                <p>+57 320 4074867</p>
+                <p>Mayerlicastaneda2004@gmail.com</p>
+                <p>guevarax72@gmail.com</p>
             </div>
 
             <div class="footer_tag">
                 <h2>Nuestro servicio</h2>
-                <p>entrega rapida</p>
+                <p>Entrega rapida</p>
                 <p>Pagos Faciles</p>
                 <p>24 x 7 Servicio</p>
             </div>
