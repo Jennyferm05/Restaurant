@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2023 a las 20:50:00
+-- Tiempo de generación: 01-04-2023 a las 23:44:34
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -76,9 +76,19 @@ INSERT INTO `domicilios` (`Id`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `D
 --
 
 CREATE TABLE `login` (
-  `Usu` varchar(50) NOT NULL,
-  `Pass` varchar(255) NOT NULL
+  `usu` varchar(50) NOT NULL,
+  `pass` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `login`
+--
+
+INSERT INTO `login` (`usu`, `pass`) VALUES
+('stiven', '$2y$10$OMFU/0bpJTdCE/S7ja0vwOjaurNKzbh1KyNq6eLhwkMry1lHh8pmW'),
+('juan', '$2y$10$0GOb9Ed04vDbgo.6K97nruZaZAmsYT4wpeK8aajAsjhbmYCyaiyHO'),
+('diego', '$2y$10$tNZCfKrT.vIYF/R6VmFPIeile9074hhWOyLT12qn4cANoXm3XgMs2'),
+('xamara55252', '$2y$10$W/zPATYsWQ.7GManq.YVqerLFtPk/XU9FBHYGihhrFsmmlzEg62I.');
 
 -- --------------------------------------------------------
 
