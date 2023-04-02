@@ -1,5 +1,5 @@
 <?php
-include_once '../modelo/conexionuno.php';
+include_once 'modelo/conexionuno.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
@@ -18,16 +18,29 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
 <!Doctype html>
 <html lang="es">
 <head>
-<link rel="shortcut icon" href="img/logo.png">
-  <link href="../css/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- CSS only Booststrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+
+	
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+    <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+	<!--font awesome con CDN-->  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/31a11c3e1f.js" crossorigin="anonymous"></script>  
+
+	<link href="css/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-  <script src="../js/rscript.js" crossorigin="anonymous"></script>
+  <script src="js/rscript.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-
-  <script src="https://kit.fontawesome.com/31a11c3e1f.js" crossorigin="anonymous"></script>
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
@@ -37,8 +50,16 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
 		<!-- Poper Bootstrap --> 
 	    
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</head>
 
+<style>
+	table.dataTable thead{
+		background: linear-gradient(to right, #0575E6, #00f260);
+		color:white;
+	}
+	</style>
+
+	
+</head>
 <body id="body-pd">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
@@ -47,22 +68,23 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
         <div> <a href="inicio.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">El Quetzal</span> </a>
-                <div class="nav_list"> <a href="inicio.php" class="nav_link"> <i class="fa-solid fa-house-user"></i> <span class="nav_name">Inicio</span> </a> 
-                <a href="menu.php" class="nav_link"> <i class="fa-solid fa-bowl-food"></i> <span class="nav_name"> Menu</span> </a> 
-                <a href="domicilio.php" class="nav_link"> <i class="fa-solid fa-cart-shopping"></i> <span class="nav_name">Domicilio</span> </a> 
-                <a href="pedidos.php" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Pedidos</span> </a> 
-                <a href="contactos.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Contactos</span> </a>  </div>
-            </div> <a href="login/index.html" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+                <div class="nav_list"> <a href="vista/inicio.php" class="nav_link"> <i class="fa-solid fa-house-user"></i> <span class="nav_name">Inicio</span> </a> 
+                <a href="vista/menu.php" class="nav_link"> <i class="fa-solid fa-bowl-food"></i> <span class="nav_name"> Menu</span> </a> 
+                <a href="vista/domicilio.php" class="nav_link"> <i class="fa-solid fa-cart-shopping"></i> <span class="nav_name">Domicilio</span> </a> 
+                <a href="index.php" class="nav_link active"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Pedidos</span> </a> 
+                <a href="vista/contactos.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Contactos</span> </a>  </div>
+            </div> <a href="vista/login/index.html" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
-    <br><br><br><center>
-    <div id="domicilio" class="container-fluid">
-    <div class="row">
-    <h1><strong><em>Pedidos</em></strong></span></h1>
-      <div class="col">
-	<table class="table table-striped">
-   <thead>
-    <tr>
+    <br>
+	<h1 class="text-center text-danger">Información General</h1>
+	<h3 class="text-center">Pedidos Realizados | Clientes</h3>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<table id="tablaUsuarios" class="table-striped table-bordered">
+			<thead class="text-center">
+			<tr>
     <th scope="col">#</th>
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
@@ -108,15 +130,14 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
 			}
 				?>
   </tbody>
-</table>
-	
+			</table>
+		   </div>
+		</div>
 	</div>
-    </div>
-    </div>
 
 
-    <!--- Modal de editar --->
-		<div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	 <!--- Modal de editar --->
+	 <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -124,7 +145,7 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../controlador/editar.php" method="post">
+      <form action="controlador/editar.php" method="post">
 				<input type="hidden" name="id" id="update_id">
         
         <div class="form-group">
@@ -199,7 +220,7 @@ $respartidores = $resultado->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="modal-body">
 		<h4>Quieres Eliminar Pedido Seleccionado</h4>
-		<form action="../controlador/eliminar.php" method="post">
+		<form action="controlador/eliminar.php" method="post">
 			<input type="text" name="id" id="delete_id">
       </div>
     <div class="modal-footer">
@@ -258,16 +279,14 @@ $('.deletebtn').on('click',function(){
                 <p>Japon</p>
                 <p>Venezuela</p>
             </div>
-
-            <div class="footer_tag">
+			<div class="footer_tag">
                 <h2>Enlace Rapido</h2>
                 <p>Inicio</p>
                 <p>Menu</p>
                 <p>Domicilio</p>
                 <p>Contactos</p>
             </div>
-
-            <div class="footer_tag">
+			<div class="footer_tag">
                 <h2>Contacto</h2>
                 <p>+57 313 3573388</p>
                 <p>+57 320 4074867</p>
@@ -293,5 +312,29 @@ $('.deletebtn').on('click',function(){
         </div>
 
     </footer>
-</body>
-</html>
+	
+	    <!-- jQuery, Popper.js, Bootstrap JS -->
+		<script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+     
+    <!-- código JS propìo-->    
+    <script type="text/javascript" src="js/main.js"></script>  
+
+<script>
+	$(document).ready(function(){
+	 $('#tablaUsuarios').DataTable();
+	});
+</script>
+	</body>
+	</html>

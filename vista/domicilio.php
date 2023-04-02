@@ -64,7 +64,7 @@ $postres = $resultado->fetchAll(PDO::FETCH_ASSOC);
                 <div class="nav_list"> <a href="inicio.php" class="nav_link"> <i class="fa-solid fa-house-user"></i> <span class="nav_name">Inicio</span> </a> 
                 <a href="menu.php" class="nav_link"> <i class="fa-solid fa-bowl-food"></i> <span class="nav_name"> Menu</span> </a> 
                 <a href="domicilio.php" class="nav_link active"> <i class="fa-solid fa-cart-shopping"></i> <span class="nav_name">Domicilio</span> </a> 
-                <a href="pedidos.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Pedidos</span> </a> 
+                <a href="../index.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Pedidos</span> </a> 
                 <a href="contactos.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Contactos</span> </a>  </div>
             </div> <a href="login/index.html" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
